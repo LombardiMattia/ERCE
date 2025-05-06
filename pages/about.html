@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--CDNJS, API JS FONTAWERSOME-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!--CDNJS PER JSPDF-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+
+    <!--FAVICON REFERENCE-->
+    <link rel="icon" href="images/right-to-bracket-solid.svg" />
+
+    <!--FOGLIO DI STILE DI RIFERIMENTO-->
+    <link rel="stylesheet" href="../assets/css/styleAbout.css" />
+
+    <!--SCRIPT JS DI RIFERIMENTO
+    <script src="../assets/js/gestioneShop.js" defer></script>
+    -->
+
+    
+
+    <title>ERCE - BUY</title>
+  </head>
+  <body>
+    <!--HEADER CON NAVBAR-->
+    <header>
+      <div id="logo"><a href="shop.html">ERCE</a></div>
+
+      <nav id="navbar">
+        <ul id="navigate">
+          <li class="active">
+            <a href="shop.html">Home</a>
+          </li>
+
+          <li>
+            <a href="#">About</a>
+          </li>
+        </ul>
+
+        <div id="dx">
+          <span class="icona">
+            <i class="fa-solid fa-circle-user"></i>
+          </span>
+
+          <span class="icona" id="carrello">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <div id="advise">
+              <!--GESTITO DINAMICAMENTE-->
+            </div>
+          </span>
+
+          
+        </div>
+      </nav>
+    </header>
+
+    <!-- CONTENUTO PRINCIPALE -->
+<div id="main-content">
+    <section class="intro">
+      <h1>COS'È ERCE?</h1>
+      <p>
+        ERCE è una piattaforma di e-commerce educativa sviluppata da <strong>Lombardi Mattia</strong>,
+        studente dell’Istituto Tecnico Tecnologico "S. Cannizzaro". Il sito nasce come progetto didattico
+        per simulare un vero negozio online e mettere in pratica competenze in programmazione,
+        design web e gestione dei dati.
+      </p>
+    </section>
+  
+    <section class="chi-siamo">
+      <h2>Chi siamo</h2>
+      <div class="card-profilo">
+        <img src="../images/animatedGif.gif" alt="Profilo sviluppatore" />
+        <div>
+          <h3>Lombardi Mattia</h3>
+          <p>Studente appassionato di informatica, design e sviluppo web. Ha realizzato ERCE come progetto finale scolastico per dimostrare le proprie abilità tecniche e creative.</p>
+        </div>
+      </div>
+    </section>
+  
+    <section class="obiettivi">
+      <h2>Obiettivi del Progetto</h2>
+      <ul class="lista-obiettivi">
+        <li>✅ Simulare un sistema e-commerce completo</li>
+        <li>✅ Utilizzare HTML, CSS, JS e JSON senza backend</li>
+        <li>✅ Produrre fatture PDF lato client</li>
+        <li>✅ Applicare principi di responsive design</li>
+      </ul>
+    </section>
+  
+    <section class="note-dev">
+      <h2>Nota dello sviluppatore</h2>
+      <p>
+        ERCE funziona localmente tramite un file JSON statico. I prodotti visibili sono quelli presenti nel JSON,
+        senza uso di Node.js o database esterni. Il sito è interamente realizzato con HTML, CSS, JavaScript e JSON.
+      </p>
+    </section>
+  
+    <section class="contatti">
+      <h2>Contattaci</h2>
+      <form id="form-contatto">
+        <input type="text" placeholder="Nome" required />
+        <input type="email" placeholder="Email" required />
+        <textarea placeholder="Scrivi il tuo messaggio..." required></textarea>
+        <button type="submit">Invia messaggio</button>
+      </form>
+    </section>
+  </div>
+  
+
+ 
+
+
+    
+    <!--FOOTER-->
+    <footer id="footer">
+      <div class="superiore">
+        <div id="logo">ERCE</div>
+
+      </div>
+      <div class="inferiore">
+        <div id="b1">
+          GESTIONE AMMINISTRATIVA
+          <hr />
+          <ul>
+            <li>Ente: ITT S. Cannizzaro</li>
+            <li>Telefono: 02-9303576</li>
+            <li>Email: mitf13000q@istruzione.it</li>
+            <li>PEC: mitf13000q@pec.istruzione.it</li>
+            <li>P.IVA: 86502580151</li>
+          </ul>
+        </div>
+
+        <div id="b2">
+          MAPPA DEL SITO
+          <hr />
+          <ul>
+            <li><a href="#" target="_self">Home Page</a></li>
+            <li><a href="#" target="_self">About</a></li>
+            <li><a href="#" target="_self">Contact</a></li>
+            <li><a href="#" target="_self">Segnalazioni</a></li>
+          </ul>
+        </div>
+
+        <div id="b3">
+          CODICE DEL SITO
+          <hr />
+          <ul>
+            <li>
+              <a href="#" target="_blank"
+                >Licenza (MIT) <i class="fa-solid fa-id-badge"></i
+              ></a>
+            </li>
+            <li>
+              <a href="#" target="_blank"
+                >CODICE <i class="fa-brands fa-github"></i></i
+              ></a>
+            </li>
+            <li>
+              <a href="#" target="_blank"
+                >ERCE MANAGEMENT SYSTEM</i></i
+              ></a>
+            </li>
+            <li>
+              <a href="#" target="_blank"
+                >ERCE STORAGE SYSTEM</i></i
+              ></a>
+            </li>
+            <li>
+              <a href="#" target="_blank"
+                >ERCE-Coding</i></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <div class="sotto">
+      &copy; 2025. Tutti i diritti sono riservati, ERCE, Servizio di E-Commerce.
+    </div>
+  </body>
+</html>
