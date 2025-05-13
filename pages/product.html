@@ -10,25 +10,29 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
 
-  
+    <!--CDNJS PER JSPDF-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+
     <!--FAVICON REFERENCE-->
     <link rel="icon" href="images/right-to-bracket-solid.svg" />
 
     <!--FOGLIO DI STILE DI RIFERIMENTO-->
-    <link rel="stylesheet" href="../assets/css/styleShop.css" />
+    <link rel="stylesheet" href="../assets/css/product.css" />
 
-    <!--SCRIPT JS DI RIFERIMENTO-->
+    <!--SCRIPT JS DI RIFERIMENTO
     <script src="../assets/js/gestioneShop.js" defer></script>
-    <title>ERCE - HOME</title>
+    -->
+
+    <script src="../assets/js/gestioneProdotto.js" defer></script>
+
+    <title>ERCE - BUY</title>
   </head>
   <body>
     <!--HEADER CON NAVBAR-->
     <header>
-      <div id="logo"><a href="shop.html">ERCE</a>
-        <div id="version">
-          v. alpha 2.0
-        </div>
-      </div>
+      <div id="logo"><a href="shop.html">ERCE</a></div>
 
       <nav id="navbar">
         <ul id="navigate">
@@ -53,21 +57,17 @@
             </div>
           </span>
 
+          
+        </div>
       </nav>
     </header>
 
-    <!--NOVITÀ-->
-    <div id="box_novita">
-      <div id="box-title">NOVITÀ DEL MOMENTO</div>
-      <div id="banner">
-        Non perdere l'occasione per nuovi acquisti. Scopri tutti i prezzi.
-      </div>
+    <div id="contenitore-prodotto">
+        
     </div>
+   
 
-    <div class="prodotti" id="griglia">
-      <!--CODICE AGGIUNTO VIA JSON-JS-->
-    </div>
-
+    
     <!--FOOTER-->
     <footer id="footer">
       <div class="superiore">

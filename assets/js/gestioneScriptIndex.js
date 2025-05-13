@@ -105,8 +105,6 @@ function log() {
       // Se email e password sono corretti
       er.style.display = "none";
       window.open("pages/shop.html", "_self");
-      // Puoi aggiungere ulteriori azioni come il redirect qui, ad esempio:
-      // window.location.href = "paginaSuccesso.html";
     })
     .catch((error) => {
       console.error("Errore nel recupero del file JSON:", error);

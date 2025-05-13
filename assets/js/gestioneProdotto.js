@@ -1,4 +1,4 @@
-//variabile per il conteggio carrello salvata in local storage
+// GESTIONE SCRIPT PRODOTTO
 var conteggio;
 //localStorage.clear();
 
@@ -10,39 +10,66 @@ conteggio =
 
 //gestione prodotti. caricamento e fetch file json
 start();
+const prodottoId = localStorage.getItem("id"); // prodotto corrente
 
 window.addEventListener("DOMContentLoaded", () => {
+  console.log("Current product selected: " + prodottoId);
+
   fetch("../assets/js/prodotti.json")
-    .then((res) => res.json())
-    .then((prodotti) => {
-      const container = document.getElementById("griglia");
-
-      prodotti.forEach((p) => {
-        const a = document.createElement("a");
-        a.href = "product.html";
-        a.id = p.id;
-
-        a.addEventListener("click", () => {
-          localStorage.setItem("id", p.id);
-        });
-
-        const box = document.createElement("div");
-        box.classList.add("product-box");
-        box.innerHTML = `
-          <img src="${p.immagine}" alt="${p.nome}" />
-          <h3>${p.nome}</h3>
-          <p class="marca">${p.marca}</p>
-          <p class="descrizione">${p.descrizione}</p>
-          <p class="prezzo">${p.costo.toFixed(2)} €</p>
-          <button type='button' class='btn' onclick='carrello(${p.id})'>
-            <i class='fa-solid fa-cart-shopping'></i> Aggiungi al carrello
-          </button>
-        `;
-        a.appendChild(box);
-        container.appendChild(a);
-      });
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Errore nella lettura del file. Check fetch.");
+      }
+      return response.json();
     })
-    .catch((err) => console.error("Errore nel caricamento JSON:", err));
+    .then((data) => {
+      console.log("File JSON letto correttamente. Operazione in corso...");
+
+      const prodotto = data.find((p) => p.id == prodottoId);
+
+      if (prodotto) {
+        console.log("Prodotto trovato:", prodotto);
+        const box = document.getElementById("contenitore-prodotto"); //box dove andrò ad inserire il contenuto
+        box.innerHTML = `
+            <img src="${prodotto.immagine}" alt="${prodotto.nome}" id="immagine" />
+        `;
+        //box descrizione
+        let descrizione = document.createElement("div");
+        descrizione.classList.add("descrizione");
+        descrizione.innerHTML = `
+            <span id="nome">${prodotto.nome}</span>
+            <span id="marca">${prodotto.marca}</span>
+            <span id="stairs">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            5,0
+            </span>
+            <hr>
+            <span id="offerta"><i class="fa-solid fa-fire"></i>&nbsp;Offerta a tempo</span>
+            <span id="costo">${prodotto.costo} &euro;</span>
+            <span id="info">${prodotto.descrizione}</span>
+            <span id="altre">
+            <ul>
+                <li><b>Consegna</b>: Gratuita</li>
+                <li><b>Spedizione</b>: 3-4 gg. lavorativi</li>
+                <li><b>Rivenditore</b>: Erce</li>
+                <li><b>Reso</b>: entro 2 settimane dall'acquisto</li>
+                <li><b>Valutazioni</b>: ottime</li>
+            </ul>
+            </span>
+            <button type="button" id="btn" onclick="carrello(${prodotto.id})">Aggiungi al carrello</button>
+        `;
+        box.appendChild(descrizione);
+      } else {
+        console.warn("Nessun prodotto trovato con ID:", prodottoId);
+      }
+    })
+    .catch((error) => {
+      console.error("Errore fetch:", error);
+    });
 });
 
 //Gestione scroll
